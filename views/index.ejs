@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Shopping list</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="javascripts/functions.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="switch">
+            <button type="button">Items</button>
+            <button type="button" onclick="location.href='/list';">List</button>
+        </div>
+    </header>
+    <main>
+        <form action="/order" method="POST">
+            <section id="Items">
+                <div class="item-card">
+                    <h2>Apples</h2>
+                    <img src="images/apples.jpg" alt="."></img>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, qui eius. Quas porro, iste velit
+                        non
+                        minus mollitia nobis alias dignissimos a est repellendus, officiis doloribus nemo iure odit
+                        quos?
+                    </p>
+                    <label for="apples">Count:</label>
+                    <input type="number" id="apples" name="apples" min="0" max="100">
+                </div>
+                <div class="item-card">
+                    <h2>Bananas</h2>
+                    <img src="images/bananas.jpg" alt="."></img>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem hic veritatis aspernatur
+                        obcaecati,
+                        cupiditate iste doloremque dolores, quia dolore dolor itaque exercitationem modi corrupti
+                        accusamus
+                        rem magni! Totam, ipsum quis!</p>
+                    <label for="bananas">Count:</label>
+                    <input type="number" id="bananas" name="bananas" min="0" max="100">
+                </div>
+                <div class="item-card">
+                    <h2>Berries</h2>
+                    <img src="images/berries.jpg" alt="."></img>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ad mollitia architecto incidunt?
+                        Minima,
+                        porro inventore beatae laborum, quis vel tempora obcaecati quae neque itaque, cupiditate
+                        repudiandae
+                        magnam accusantium incidunt.</p>
+                    <label for="berries">Count:</label>
+                    <input type="number" id="berries" name="berries" min="0" max="100">
+                </div>
+                <div class="item-card">
+                    <h2>Oranges</h2>
+                    <img src="images/oranges.jpg" alt="."></img>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis tempore excepturi eos iste
+                        eius,
+                        illo impedit quae. Praesentium consequuntur, consectetur, modi unde cum placeat deleniti
+                        voluptatum
+                        suscipit ducimus excepturi voluptates.</p>
+                    <label for="oranges">Count:</label>
+                    <input type="number" id="oranges" name="oranges" min="0" max="100">
+                </div>
+                <div class="item-card">
+                    <h2>Pears</h2>
+                    <img src="images/pears.jpg" alt="."></img>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quas officia reiciendis suscipit
+                        tempore
+                        quibusdam ab minus excepturi perspiciatis? Iste minima ipsa reprehenderit nam qui similique,
+                        tempora
+                        ullam iure ex?</p>
+                    <label for="oranges">Count:</label>
+                    <input type="number" id="pears" name="pears" min="0" max="100">
+                </div>
+                <div class="item-card">
+                    <h2>Strawberries</h2>
+                    <img src="images/Strawberries.jpg" alt="."></img>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nihil, hic quis tenetur veritatis
+                        optio quas? Sequi, aliquam provident maxime inventore expedita porro, ratione similique cumque
+                        doloribus nisi adipisci deleniti.</p>
+                    <label for="Strawberries">Count:</label>
+                    <input type="number" id="Strawberries" name="strawberries" min="0" max="100">
+                </div>
+
+            </section>
+            <div class="container">
+                <button class="order-button" onclick="sendOrder()">Create order</button>
+            </div>
+        </form>
+    </main>
+
+</body>
+
+</html>

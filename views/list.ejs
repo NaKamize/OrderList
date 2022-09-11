@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <main>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Items</th>
+            </tr>
+            <% for (let res in data) {%>
+                <tr>
+                    <td>
+                        <%= data[res].id%>
+                    </td>
+                    <td>
+                        <%= data[res].list %>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+    </main>
+</body>
+
+</html>
