@@ -44,7 +44,7 @@ router.post('/order', (req, res) => {
   if (straw === "") { straw = 0 }
 
 
-  let orderList = `${apples} ${bananas} ${berries} ${oranges} ${pears} ${straw}`;
+  let orderList = `Apples ${apples} Bananas ${bananas} Berries ${berries} Oranges ${oranges} Pears ${pears} Strawberries ${straw}`;
   let sql = `INSERT INTO orders (list) VALUES ("${orderList}")`;
 
   connection.query(sql, (err, res) => {
@@ -52,7 +52,7 @@ router.post('/order', (req, res) => {
     console.log("Rows affected " + res.affectedRows);
   });
 
-  res.send("Order was successful !");
+  res.redirect('/');
 });
 
 let data = []
@@ -60,9 +60,18 @@ let data = []
 router.get('/list', (req, res) => {
   connection.query("SELECT * FROM orders", (err, result) => {
     if (err) throw err;
-    console.log(result)
+    console.log(result);
     res.render('list', { title: 'All Orders', data: result });
   });
+});
+
+router.delete('/list/del/:id', (req, res) => {
+  connection.query(`DELETE FROM orders WHERE id = ${req.params.id}`, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+  })
+
+  res.redirect('/list');
 });
 
 module.exports = router;

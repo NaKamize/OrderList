@@ -1,3 +1,3 @@
-function sendOrder() {
+function delOrder() {
     console.log('Hello World!')
 }

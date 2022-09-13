@@ -6,25 +6,43 @@
     <title>
         <%= title %>
     </title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/table.css">
 </head>
 
 <body>
     <main>
+        <header>
+            <div id="switch">
+                <button id="menuBtn" type="button" onclick="location.href='/';">Items</button>
+                <button id="menuBtn" type="button" onclick="location.href='/list';">List</button>
+            </div>
+        </header>
         <table>
-            <tr>
-                <th>ID</th>
-                <th>Items</th>
-            </tr>
-            <% for (let res in data) {%>
+            <thead>
                 <tr>
-                    <td>
-                        <%= data[res].id%>
-                    </td>
-                    <td>
-                        <%= data[res].list %>
-                    </td>
+                    <th>ID</th>
+                    <th>Items</th>
+                    <th></th>
                 </tr>
-                <% } %>
+            </thead>
+            <tbody>
+                <% for (let res in data) {%>
+                    <tr>
+                        <td>
+                            <%= data[res].id%>
+                        </td>
+                        <td>
+                            <%= data[res].list %>
+                        </td>
+                        <td>
+                            <form method="POST" action="/list/del/<%= data[res].id%>?_method=DELETE"><button id="DelBtn"
+                                    type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
         </table>
     </main>
 </body>
